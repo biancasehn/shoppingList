@@ -1,0 +1,8 @@
+<ul id="itemsUL">
+    <% items.map(item => { %>
+        <div class="itemsList">
+            <li id="item-li" class="<%= item.status %> " itemId="<%= item.id %>" > <%= item.item %> </li>
+            <button id="deleteItem" itemId="<%= item.id %>" > X </button>
+        </div>
+    <% }) %>
+</ul>

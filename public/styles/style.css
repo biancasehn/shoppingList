@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    margin: auto;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 18px;
+}
+
+/* NAV */
+nav {
+    border-bottom: 2px solid black;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li{
+    margin: 0 10px;
+}
+
+a {
+    color: #e7e7eb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* MAIN */
+
+button {
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-size: .9em;
+}
+
+.main {
+    margin: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding: 2em .9em 3em .9em;
+    border: 1px solid rgb(104, 101, 101);
+}
+
+@media only screen and (max-width:1000px) {
+    body {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    body {
+        font-size: 0.7em;
+    }
+    .main {
+        width: 50vw
+    }
+}
+
+@media only screen and (max-width:425px) {
+    .main {
+        width: 60vw
+    }
+}
+
+h1{
+    border-bottom: 2px solid rgb(58, 19, 19);
+    text-align: center;
+}
+
+#inputContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#newItem {
+    margin-right: .8em;
+    padding: .6em;
+    width: 60%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+
+#addButton {
+    margin-top: .3em;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: .5em;
+    background-color: pink;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+  
+
+/* LIST */
+
+.main ul {
+    margin:1em 0 0 0;
+    padding:0;
+}
+
+#itemsUL li{
+    text-align:center;
+    font-size: 1.25em;
+    cursor: pointer;
+    list-style-type: none;
+    background: #eee;
+    transition: 0.2s;
+    margin: 5px auto;
+    width: fit-content
+}
+
+#itemsUL li:hover {
+    background: #ddd;
+}
+
+li#item-li {
+    background: #eee;
+    width: 100%;
+}
+
+button#deleteItem {
+    background-color: transparent;
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+.bought {
+    text-decoration: line-through;
+}
+
+.itemsList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#resetList {
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: .5em;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    width: fit-content;
+    margin-left:auto;
+    margin-top:30px;
+    cursor: pointer;
+  }
+
+.error {
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.error.on {
+    visibility: visible;
+    opacity: 1;
+
+    z-index: 9;
+
+    font-size: .8em;
+    background-color: rgba(255, 192, 203, 0.8);
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    position: fixed;
+    bottom: 0;
+    height: 8%;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.error.on button {
+    position: absolute;
+    padding: .4em;
+    bottom: 25%;
+    right: 20%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+  
+.animate-up {
+    transform: translateY(35px);
+    opacity: 0;
+    animation: up 400ms forwards;
+}
+
+@media (max-width: 480px) {
+    .error.on {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+    }
+    .error.on button {
+        position: relative;
+        right: auto;
+        bottom:auto;
+        margin-bottom: 5px;
+    }
+}

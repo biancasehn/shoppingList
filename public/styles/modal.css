@@ -1,0 +1,107 @@
+.modal-wrapper{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal-wrapper.on{
+    width: 100vw;
+    height: 100vh;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal{
+    position: relative;
+    text-align: center;
+    padding: .2em .5em;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+
+    width: 28vw;
+    height: 30vh;
+    border-radius:12%;
+    border: 1px solid rgb(151, 150, 150);
+
+    visibility: visible;
+}
+
+@media only screen and (max-width: 565px) {
+    .modal {
+        width: 40vw;
+        height: 30vh;
+    }
+}
+
+@media only screen and (max-width: 427px) {
+    .modal {
+        width: 52vw;
+        height: 30vh;
+    }
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+  
+.animate-pop {
+    transform: scale(0);
+    opacity: 0;
+    animation: pop 300ms forwards;
+}
+
+.btnsModal{
+    width: 100%;
+    margin-top: .7em;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.btnsModal button {
+    width: 40%;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    font-size: .9em;
+    padding: .6em;
+}
+.btnCancel {
+    background-color: #ECEEF0;
+    margin-right: 2em;
+}
+
+.btnReset{
+    background-color: #FA3F38;
+    color: rgba(255, 255, 255, 0.932);
+}
+
+.closeModal {
+    position: absolute;
+    font-weight: bold;
+    top: .9em;
+    right: .9em;
+}
+
