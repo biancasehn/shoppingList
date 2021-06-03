@@ -12,7 +12,7 @@ const valueInput = document.getElementById("newItem")
 const mainDiv = document.getElementById("main")
 const modalBtnClearList = document.querySelector(".btnReset")
 
-const Url = "https://shoppinglist-application.herokuapp.com"
+const Url = "https://shoppinglist-application-v2.herokuapp.com"
 
 // Manipulation functions
 const createNewItem = (valueNewItem,newItemId, lengthDb) => {
