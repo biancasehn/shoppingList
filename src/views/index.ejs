@@ -11,42 +11,44 @@
         <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 	</head>
     <body>
-        <nav>
-            <ul class="main-nav">
-                <li><a>Home</a></li>
-                <li>Shopping list</li>
-            </ul>
-        </nav>
-        
-        <div class="main" id="main">
-            <h1>Shopping List</h1><br>
-            <form id='inputContainer'>
-                <input id="newItem" maxlength="30" type="text" name="newItem" placeholder="Enter items"/>
-                <button id="addButton" type="submit"> Add item </button>
-                <br>
-            </form>
-
-            <%- include('parts/list', { items })  %>
-
-            <% if (items.length > 1) { %>
-                <button id="resetList" type="submit">Clear items</button>
-            <% } %>
-        </div>
-        <div class="modal-wrapper">
-            <div class="modal">
-                <p>Are you sure you want to reset your list?</p>
-                <div class="btnsModal">
-                    <button class="btnCancel">Cancel</button>
-                    <button class="btnReset">Reset list</button>
-                </div>
-                <button class="closeModal">X</button>
+        <div class="container">
+            <nav>
+                <ul class="main-nav">
+                    <li><a>Home</a></li>
+                    <li>Shopping list</li>
+                </ul>
+            </nav>
+            
+            <div class="main" id="main">
+                <h1>Shopping List</h1><br>
+                <form id='inputContainer'>
+                    <input id="newItem" maxlength="20" type="text" name="newItem" placeholder="Enter items"/>
+                    <button id="addButton" type="submit"> Add item </button>
+                    <br>
+                </form>
+    
+                <%- include('parts/list', { items })  %>
+    
+                <% if (items.length > 1) { %>
+                    <button id="resetList" type="submit">Clear items</button>
+                <% } %>
             </div>
+            <div class="modal-wrapper">
+                <div class="modal">
+                    <p>Are you sure you want to reset your list?</p>
+                    <div class="btnsModal">
+                        <button class="btnCancel">Cancel</button>
+                        <button class="btnReset">Reset list</button>
+                    </div>
+                    <button class="closeModal">X</button>
+                </div>
+            </div>
+            <div class="error">
+                <p>You have already added this item to your list</p>
+                <button class="dismiss">Dismiss</button>
+            </div>
+            <script type="module" src="scripts/script.js"></script>
+            <script type="module" src="scripts/modal.js"></script>
         </div>
-        <div class="error">
-            <p>You have already added this item to your list</p>
-            <button class="dismiss">Dismiss</button>
-        </div>
-        <script type="module" src="scripts/script.js"></script>
-        <script type="module" src="scripts/modal.js"></script>
     </body>
 </html>
