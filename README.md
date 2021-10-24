@@ -24,3 +24,5 @@ The user has the possibility to:
 * Cross off an item list, by clicking/tapping the item;
 * Remove individual items, by clicking/tapping the icon "x";
 * Clear the entire list, by clicking/tapping "Clear items".
+
+![Desktop version](./shoppinglist_screenshot.png)
